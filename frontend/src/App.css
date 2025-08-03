@@ -1,21 +1,85 @@
-/* App.css */
-.container {
-  display: flex;
-  justify-content: right; /* จัดตำแหน่งในแกน X (แนวนอน) */
-  align-items: center;     /* จัดตำแหน่งในแกน Y (แนวตั้ง) */
-  height: 100vh;           /* ให้คอนเทนเนอร์ครอบคลุมทั้งหน้าจอ */
-  background-color: #f4f4f4; /* สีพื้นหลังของคอนเทนเนอร์ */
+/* คอนเทนเนอร์หลักสำหรับกล่องที่ 1 */
+.container1 {
+  display: flex;                   /* ใช้ Flexbox สำหรับจัดวาง */
+  justify-content: center;        /* จัดให้อยู่กลางแนวนอน */
+  align-items: center;            /* จัดให้อยู่กลางแนวตั้ง */
+  position: fixed;             /* ใช้ fixed เพื่อให้กล่องอยู่ที่ตำแหน่งที่กำหนด */
+  height: 100vh;                  /* ให้สูงเต็มหน้าจอ */
+  background-color: #bda0a000;    /* สีพื้นหลังโปร่งใส */
+  z-index: 100;
+}
+.containernavigationtab {
+  position: fixed;
+  display: inline-flex;             /* ใช้ inline-flex จะทำให้ขนาดพอดีกับเนื้อหา */
+  top: 150px;
+  left: 100px;
+  background-color: #bda0a000;
+  width: fit-content;
+  height: fit-content;
+  top: 14px;
+  left: 15px;
+  z-index: 100;
 }
 
-.resizable-box {
-  width: 300px; /* ความกว้างของกล่อง */
-  height: 200px; /* ความสูงของกล่อง */
-  background-color: #4CAF50; /* สีพื้นหลังของกล่อง */
+.resizable-box1 {
+  position: fixed;
+  top: 110px;
+  left: 20px;
+  transform: translateX(-10%);
+  width: 300px;
+  height: 450px;
+  background-color: #003eb3;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 5px solid #333; /* ขอบของกล่อง */
-  border-radius: 10px; /* การทำมุมมน */
-  box-sizing: border-box; /* รวมขอบในขนาดของกล่อง */
+  border-top-right-radius: 40px;
+
+  /* ✅ เพิ่มกรอบสีน้ำเงิน ขนาด 10px */
+  border: 3px solid #eaf1f8;
+
+  z-index: 10;
 }
 
+/* เปลี่ยนสีตัวอักษรรายการเมนูทั้งหมดที่ยังไม่ถูกเลือก */
+.custom-menu .ant-menu-item {
+  color: #ffffff !important; /* หรือสีที่คุณต้องการ */
+}
+
+/* สีพื้นหลังรายการที่ถูกเลือก */
+.custom-menu .ant-menu-item-selected {
+  background-color: #ffffff !important; /* หรือสีที่คุณต้องการ */
+  color: #000000 !important;
+}
+
+/* ป้องกัน hover ไปทับสี selected */
+.custom-menu .ant-menu-item-selected:hover {
+  background-color: #ffffff !important;
+}
+
+/* เปลี่ยนสีไอคอนในรายการที่ถูกเลือก */
+.custom-menu .ant-menu-item-selected .ant-menu-item-icon {
+  color: #000000 !important;
+}
+
+/* ลดขนาดตัวอักษรและระยะห่างของเมนู */
+.custom-menu .ant-menu-item {
+  padding: 4px 8px;         /* ลด padding ด้านบน-ล่าง และซ้าย-ขวา */
+  font-size: 12px;          /* ลดขนาดฟอนต์ */
+  height: 30px !important;  /* ปรับความสูงต่อแถว (default = 40px) */
+  line-height: 30px !important;
+}
+
+.container2 {
+  position: fixed;                    /* ล็อกตำแหน่งกับ viewport */
+  top: 50%;                           /* กึ่งกลางแนวตั้ง */
+  left: 50%;                          /* กึ่งกลางแนวนอน */
+  transform: translate(-50%, -50%);  /* ดึงกลับครึ่งหนึ่งของตัวเอง */
+  background-color: #bda0a000;       /* สีพื้นหลังโปร่งใส */
+  display: flex;                     /* Flexbox จัดภายใน */
+  justify-content: center;          /* จัดกลางแนวนอน (ของเนื้อหาภายใน) */
+  align-items: center;              /* จัดกลางแนวตั้ง (ของเนื้อหาภายใน) */
+  width: 300px;                     /* ใส่ความกว้างตามต้องการ */
+  height: 300px;                    /* ใส่ความสูงตามต้องการ */
+  z-index: 0;
+}
