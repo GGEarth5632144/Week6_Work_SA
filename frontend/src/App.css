@@ -1,42 +1,21 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* App.css */
+.container {
+  display: flex;
+  justify-content: right; /* จัดตำแหน่งในแกน X (แนวนอน) */
+  align-items: center;     /* จัดตำแหน่งในแกน Y (แนวตั้ง) */
+  height: 100vh;           /* ให้คอนเทนเนอร์ครอบคลุมทั้งหน้าจอ */
+  background-color: #f4f4f4; /* สีพื้นหลังของคอนเทนเนอร์ */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.resizable-box {
+  width: 300px; /* ความกว้างของกล่อง */
+  height: 200px; /* ความสูงของกล่อง */
+  background-color: #4CAF50; /* สีพื้นหลังของกล่อง */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #333; /* ขอบของกล่อง */
+  border-radius: 10px; /* การทำมุมมน */
+  box-sizing: border-box; /* รวมขอบในขนาดของกล่อง */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
